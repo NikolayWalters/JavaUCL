@@ -15,16 +15,10 @@ public class VectorMethods {
 		return magnitude; 
 	}
 	
-	public double angleMethod(double magnitude1, double magnitude2, double x1, double x2, double y1, double y2, double z1, double z2) {
+	public double angleMethod(double x1, double x2, double y1, double y2, double z1, double z2) {
 		double angle;
-		magnitude1 = magnitudeMethod(x1,y1,z1);
-		magnitude2 = magnitudeMethod(x2,y2,z2);
-		x1 = 0;
-		y1 = 0;
-		z1 = 0;
-		x2 = 0;
-		y2 = 0;
-		z2 = 0;
+		double magnitude1 = magnitudeMethod(x1,y1,z1);
+		double magnitude2 = magnitudeMethod(x2,y2,z2);
 		angle = Math.acos((dotProductMethod(x1,x2,y1,y2,z1,z2)/(magnitude1*magnitude2)));
 		return angle;
 	}
@@ -41,6 +35,22 @@ public class VectorMethods {
 				System.out.println("The dot product of the two vectors is: "+dotproduct);
 				System.out.println("The magnitude of the first vector is: "+(vm.magnitudeMethod(xinput1, yinput1, zinput1)
 						+" and the magnitude of the second vector is: "+(vm.magnitudeMethod(xinput2, yinput2, zinput2))));
-	}
+				
+				double xinput11 = 2.0;
+				double yinput11 = 3.0;
+				double zinput11 = 4.0;
+				double xinput22 = 1.0;
+				double yinput22 = 3.0;
+				double zinput22 = 2.0;
+				System.out.println("The angle between the two vectors is: "+(Math.toDegrees(vm.angleMethod(xinput11, xinput22, yinput11, yinput22, zinput11, zinput22))));
+				double xinput111 = 2.0;
+				double yinput111 = 3.0;
+				double zinput111 = 4.0;
+				double xinput222 = 0.0;
+				double yinput222 = 0.0;
+				double zinput222 = 0.0;
+				System.out.println("The angle between the two vectors is: "+(Math.toDegrees(vm.angleMethod(xinput111, xinput222, yinput111, yinput222, zinput111, zinput222))));
+				System.out.println("The NaN result can be observed, since we are dividing by a magnitude zero vector.");
+			}
 
 }

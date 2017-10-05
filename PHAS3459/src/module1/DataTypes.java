@@ -28,7 +28,20 @@ public class DataTypes {
 		System.out.println("Boolean cannot be combined with numbers even if it produces a sensible output (i.e. 0 or 1)");
 		char charVar = 99;
 		System.out.println("On its own charVar produces letter " +charVar+ " which has a decimal value of 99");
-		System.out.println("But when summed with an integer (10) it produces a number "+(charVar+intVar));		
+		System.out.println("But when summed with an integer (10) it produces a number "+(charVar+intVar));
+		
+		int j=1;
+		int i;
+		//j=i+1;
+		//System.out.println("By adding 1 to an uninitialised iteger we get:"+(j)+". This suggests we cannot operate with variables that havent been inititalised") ;
+		
+		
+		double doubleCast = 4.99;
+		int intCast;
+		intCast = (int) doubleCast;
+		System.out.println("Double to integer conversion yields - "+ intCast+". So the decimal points were simply removed. i.e. the double wasn't rounded to integer.");
+		
+		
 	}
 
 }
